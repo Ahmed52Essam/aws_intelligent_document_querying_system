@@ -100,38 +100,7 @@ project-root/
 
 6. After the Terraform deployment is complete, note the outputs, particularly the Aurora cluster endpoint.
 
-Answer:
-```
-aurora_arn = "arn:aws:rds:us-east-1:143778444963:cluster:my-aurora-serverless"
-aurora_endpoint = "my-aurora-serverless.cluster-cdbbqqzfn1fw.us-east-1.rds.amazonaws.com"
-db_endpoint = "my-aurora-serverless.cluster-cdbbqqzfn1fw.us-east-1.rds.amazonaws.com"
-db_reader_endpoint = "my-aurora-serverless.cluster-ro-cdbbqqzfn1fw.us-east-1.rds.amazonaws.com"
-private_subnet_ids = [
-  "subnet-0419d6c4372a19dce",
-  "subnet-027adc1edafeced0c",
-  "subnet-0124ac9d1951827ff",
-]
-public_subnet_ids = [
-  "subnet-0cf14b906687fa3e7",
-  "subnet-0f0799ebbbf3a9879",
-  "subnet-00794de681d15ab0e",
-]
-rds_secret_arn = "arn:aws:secretsmanager:us-east-1:143778444963:secret:my-aurora-serverless-qCnrVE"
-s3_bucket_name = "arn:aws:s3:::bedrock-kb-143778444963"
-vpc_id = "vpc-0b465e84fd16da816"
-```
-
-
 7. Prepare the Aurora Postgres database. This is done by running the sql queries in the script/ folder. This can be done through Amazon RDS console and the Query Editor.
-
-myapp
-my-aurora-serverless
-aurora-postgresql
-my-aurora-serverless.cluster-cdbbqqzfn1fw.us-east-1.rds.amazonaws.com
-uATNS88raMui63Hc71t0
-5432
-dbadmin
-
 
 8. Navigate to the project Stack 2. This stack includes Bedrock Knowledgebase
 
@@ -149,9 +118,6 @@ dbadmin
       ```
       - Review the planned changes and type "yes" to confirm.
       
-bedrock_knowledge_base_arn = "arn:aws:bedrock:us-east-1:143778444963:knowledge-base/U8XE9IO66N"
-bedrock_knowledge_base_id = "U8XE9IO66N"
-
 12. Upload pdf files to S3, place your files in the `spec-sheets` folder and run:
       ```
       python scripts/upload_to_s3.py
